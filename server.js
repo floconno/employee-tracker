@@ -44,7 +44,7 @@ function start() {
         .then(response => {
             if (response.choice === "View All Employees") {
                 app.get('/api/employees', (req, res) => {
-                    const sql = `SELECT id, first_name, last_name AS name FROM employees`;
+                    const sql = `SELECT id, first_name AS name FROM employees`;
 
                     db.query(sql, (err, rows) => {
                         if (err) {
